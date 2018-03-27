@@ -1,0 +1,7 @@
+CREATE DATABASE LearnJavaAdverces;
+USE LearnJavaAdverces;
+CREATE TABLE student(
+  id INTEGER PRIMARY KEY AUTO_INCREMENT,
+  name NVARCHAR(200),
+  age INTEGER
+)

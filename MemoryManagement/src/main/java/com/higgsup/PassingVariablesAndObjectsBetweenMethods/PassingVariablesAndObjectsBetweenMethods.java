@@ -8,41 +8,36 @@ public class PassingVariablesAndObjectsBetweenMethods {
     }
 
     public static void test1() {
-        Dog aDog = new Dog("Max");
+        Dog aDog = new Dog("Chó đỏ");
         System.out.println(aDog.hashCode());
 
-        // we pass the object to foo
         foo(aDog);
-        // aDog variable is still pointing to the "Max" dog when foo(...) returns
-        System.out.println(aDog.getName().equals("Max")); // true, java passes by value
-        System.out.println(aDog.getName().equals("Fifi")); // false
+        System.out.println(aDog.getName().equals("Chó đỏ"));
+        System.out.println(aDog.getName().equals("Chó xanh"));
         System.out.println(aDog.hashCode());
     }
 
     public static void foo(Dog d) {
-        d.getName().equals("Max"); // true
-        // change d inside of foo() to point to a new Dog instance "Fifi"
-        d = new Dog("Fifi");
-        d.getName().equals("Fifi"); // true
+        d.getName().equals("Chó đỏ"); // true
+        d = new Dog("Chó xanh");//false
+        d.getName().equals("Chó xanh"); // true
         System.out.println(d.hashCode());
     }
 
 
     public static void test2() {
-        Dog aDog = new Dog("Max");
+        Dog aDog = new Dog("Chó đỏ");
         System.out.println(aDog.hashCode());
 
-        // we pass the object to foo
         foo2(aDog);
-        // aDog variable is still pointing to the "Max" dog when foo(...) returns
-        System.out.println(aDog.getName().equals("Max")); // true, java passes by value
-        System.out.println(aDog.getName().equals("Fifi")); // false
+
+        System.out.println(aDog.getName().equals("Chó đỏ"));
+        System.out.println(aDog.getName().equals("Chó xanh"));
         System.out.println(aDog.hashCode());
     }
 
     public static void foo2(Dog d) {
-        d.getName().equals("Max"); // true
-        // this changes the name of d to be "Fifi"
-        d.setName("Fifi");
+        d.getName().equals("Chó đỏ");
+        d.setName("Chó xanh");
     }
 }
