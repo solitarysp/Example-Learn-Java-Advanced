@@ -1,4 +1,4 @@
-package com.higgsup.testMemoryLeak;/*
+package com.higgsup.GC.testConnection;/*
   By Chi Can Em  27-03-2018
  */
 

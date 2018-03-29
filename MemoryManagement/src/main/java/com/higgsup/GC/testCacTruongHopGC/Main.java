@@ -1,10 +1,10 @@
-package com.higgsup.GC;/*
+package com.higgsup.GC.testCacTruongHopGC;/*
   By Chi Can Em  27-03-2018
  */
 
 public class Main {
     public static void main(String[] args) {
-
+        tessss();
     }
 
     public static void testCungMotMethod() {
@@ -20,7 +20,7 @@ public class Main {
 
         System.gc();
     }
-
+    public static native void tessss();
     public static void test2TestKhacMethod1() {
         test2TestKhacMethod1Path2();
         System.gc();
