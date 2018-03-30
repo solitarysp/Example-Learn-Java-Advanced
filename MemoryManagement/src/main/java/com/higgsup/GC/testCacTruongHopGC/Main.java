@@ -4,7 +4,7 @@ package com.higgsup.GC.testCacTruongHopGC;/*
 
 public class Main {
     public static void main(String[] args) {
-        tessss();
+        testNewRuntime();
     }
 
     public static void testCungMotMethod() {
@@ -20,7 +20,7 @@ public class Main {
 
         System.gc();
     }
-    public static native void tessss();
+
     public static void test2TestKhacMethod1() {
         test2TestKhacMethod1Path2();
         System.gc();
@@ -38,7 +38,7 @@ public class Main {
         System.gc();
     }
 
-    public static void testHuyBoThamChieu()   {
+    public static void testHuyBoThamChieu() {
         Student student = new Student(1);
         System.gc();
         System.out.println("thu gom lần 1");
@@ -47,9 +47,15 @@ public class Main {
 
     }
 
-    public static void testTaoObjectNhungKhongThamChieu()   {
+    public static void testTaoObjectNhungKhongThamChieu() {
         new Student(1);
         Runtime.getRuntime().gc();
 
+    }
+
+    public static void testNewRuntime() {
+        new Student(1);
+        Runtime runtime = Runtime.getRuntime();
+        runtime.gc();
     }
 }
