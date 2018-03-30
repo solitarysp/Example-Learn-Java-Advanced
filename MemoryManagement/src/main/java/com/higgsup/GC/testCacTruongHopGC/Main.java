@@ -58,4 +58,21 @@ public class Main {
         Runtime runtime = Runtime.getRuntime();
         runtime.gc();
     }
+
+    public static void testCheckMemory() {
+        Student student = new Student(1);
+        Runtime.getRuntime().gc();
+        System.out.println(Runtime.getRuntime().freeMemory());;
+        Student student2 = new Student(1);
+        Runtime.getRuntime().gc();
+        System.out.println(Runtime.getRuntime().freeMemory());;
+        Student student3 = new Student(1);
+        Runtime.getRuntime().gc();
+        System.out.println(Runtime.getRuntime().freeMemory());
+
+
+
+    }
+
+
 }
