@@ -4,7 +4,7 @@ package com.higgsup.GC.testCacTruongHopGC;/*
 
 public class Main {
     public static void main(String[] args) {
-        testNewRuntime();
+        testCungMotMethod();
     }
 
     public static void testCungMotMethod() {
@@ -60,6 +60,11 @@ public class Main {
     }
 
     public static void testCheckMemory() {
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         Student student = new Student(1);
         Runtime.getRuntime().gc();
         System.out.println(Runtime.getRuntime().freeMemory());;
