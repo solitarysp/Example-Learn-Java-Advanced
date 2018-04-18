@@ -8,6 +8,7 @@ public class Student {
     private Integer id;
     private String name;
     private Integer age;
+    private int nam;
 
     public Integer getId() {
         return id;
@@ -33,9 +34,31 @@ public class Student {
         this.age = age;
     }
 
-    @Override
+  /*  @Override
     protected void finalize() throws Throwable {
         System.out.println("xóa : " + id + " tại lúc  " + new Date().toString());
+    }*/
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Student student = (Student) o;
+
+        if (nam != student.nam) return false;
+        if (id != null ? !id.equals(student.id) : student.id != null) return false;
+        if (name != null ? !name.equals(student.name) : student.name != null) return false;
+        return age != null ? age.equals(student.age) : student.age == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (age != null ? age.hashCode() : 0);
+        result = 31 * result + nam;
+        return result;
     }
 
     static public Integer TEST_ROOT = 1;

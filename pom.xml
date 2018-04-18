@@ -12,6 +12,7 @@
         <module>MemoryManagement</module>
         <module>LearnConcurrency</module>
         <module>Persistence</module>
+        <module>ReflectionAndAnnotations</module>
     </modules>
 
 

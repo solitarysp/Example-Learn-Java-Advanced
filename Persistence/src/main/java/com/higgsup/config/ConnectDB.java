@@ -4,6 +4,7 @@ package com.higgsup.config;/*
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class ConnectDB {
@@ -17,6 +18,7 @@ public class ConnectDB {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return connection;
     }
 }
