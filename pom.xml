@@ -13,6 +13,7 @@
         <module>LearnConcurrency</module>
         <module>Persistence</module>
         <module>ReflectionAndAnnotations</module>
+        <module>HandlingExceptions</module>
     </modules>
 
 
