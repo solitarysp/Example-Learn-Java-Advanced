@@ -19,6 +19,6 @@ public class TestController {
     @RequestMapping(value = "/students", method = RequestMethod.GET)
     public ResponseEntity<Object> listAllUsers() {
 
-        return new ResponseEntity<Object>(students1.getName(), HttpStatus.OK);
+        return new ResponseEntity<Object>(students1, HttpStatus.OK);
     }
 }
