@@ -13,6 +13,7 @@
         <module>LearnConcurrency</module>
         <module>Persistence</module>
         <module>ReflectionAndAnnotations</module>
+        <module>ReflectionAndAnnotations/src/main/java/com/higgsup/Annotation/ExampleAnnotationType</module>
     </modules>
 
 
