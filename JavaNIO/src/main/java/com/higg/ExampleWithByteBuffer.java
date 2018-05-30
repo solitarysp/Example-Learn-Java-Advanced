@@ -2,6 +2,8 @@ package com.higg;
 
 import java.io.*;
 import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.nio.FloatBuffer;
 import java.nio.channels.FileChannel;
 
 public class ExampleWithByteBuffer {
@@ -18,6 +20,16 @@ public class ExampleWithByteBuffer {
             while (result != -1) {
 
                 byteBuffer.flip();  //làm buffter sẵn sàn để đọc
+
+                while (byteBuffer.hasRemaining()) {
+                    byteBuffer.get(); //đọc 1 type dữ liệu 1 lần đọc.
+                }
+
+                byteBuffer.compact(); //xoá sạch dữ liệu trong buffter đẽ sẵn sàn cho lần mới.
+                result = fileChannel.read(byteBuffer);// set lại số type chưa đoc
+                byteBuffer.put((byte) 97);//put dữ liệu mới
+                byteBuffer.put((byte) 98);//put dữ liệu mới
+                byteBuffer.flip();// chuyển từ viết sang đọc
 
                 while (byteBuffer.hasRemaining()) {
                     System.out.print((char) byteBuffer.get()); //đọc 1 type dữ liệu 1 lần đọc.
