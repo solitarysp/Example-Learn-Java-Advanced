@@ -15,6 +15,7 @@
         <module>ReflectionAndAnnotations</module>
         <module>HandlingExceptions</module>
         <module>ReflectionAndAnnotations/src/main/java/com/higgsup/Annotation/ExampleAnnotationType</module>
+        <module>JavaNIO</module>
     </modules>
 
 
