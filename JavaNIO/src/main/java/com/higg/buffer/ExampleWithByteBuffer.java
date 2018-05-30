@@ -1,4 +1,6 @@
-package com.higg;
+package com.higg.buffer;
+
+import com.higg.until.Var;
 
 import java.io.*;
 import java.nio.ByteBuffer;
@@ -8,7 +10,7 @@ import java.nio.channels.FileChannel;
 
 public class ExampleWithByteBuffer {
     public static void main(String[] args) throws IOException {
-        File file = new File("D:\\PhanMem\\oracle-vm-virtualbox.exe");
+        File file = new File(Var.URL_FILE_TEST);
         FileChannel fileChannel = null;
         FileInputStream fileInputStream = null;
         ByteBuffer byteBuffer = null;
@@ -25,7 +27,7 @@ public class ExampleWithByteBuffer {
                     byteBuffer.get(); //đọc 1 type dữ liệu 1 lần đọc.
                 }
 
-                byteBuffer.compact(); //xoá sạch dữ liệu trong buffter đẽ sẵn sàn cho lần mới.
+                byteBuffer.clear(); //xoá sạch dữ liệu trong buffter đẽ sẵn sàn cho lần mới.
                 result = fileChannel.read(byteBuffer);// set lại số type chưa đoc
                 byteBuffer.put((byte) 97);//put dữ liệu mới
                 byteBuffer.put((byte) 98);//put dữ liệu mới
